@@ -28,33 +28,54 @@ public class Agenda extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        Back = new javax.swing.JButton();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        AgendaBtn = new javax.swing.JMenuItem();
+        BoletimBtn = new javax.swing.JMenuItem();
+        TurmaBtn = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        Back.setText("Back");
-        Back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Back)
-                .addContainerGap(335, Short.MAX_VALUE))
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Back)
-                .addContainerGap(266, Short.MAX_VALUE))
+            .addGap(0, 279, Short.MAX_VALUE)
         );
+
+        jMenu1.setText("Pagina");
+
+        AgendaBtn.setText("Agenda");
+        AgendaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgendaBtnActionPerformed(evt);
+            }
+        });
+        jMenu1.add(AgendaBtn);
+
+        BoletimBtn.setText("Boletim");
+        BoletimBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoletimBtnActionPerformed(evt);
+            }
+        });
+        jMenu1.add(BoletimBtn);
+
+        TurmaBtn.setText("Turmas");
+        TurmaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TurmaBtnActionPerformed(evt);
+            }
+        });
+        jMenu1.add(TurmaBtn);
+
+        jMenuBar2.add(jMenu1);
+
+        setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -70,18 +91,34 @@ public class Agenda extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
-        Professor tela = new Professor();
+    private void AgendaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgendaBtnActionPerformed
+        Agenda tela = new Agenda();
         tela.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_BackActionPerformed
+    }//GEN-LAST:event_AgendaBtnActionPerformed
+
+    private void BoletimBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoletimBtnActionPerformed
+        Notas tela = new Notas();
+        tela.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BoletimBtnActionPerformed
+
+    private void TurmaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TurmaBtnActionPerformed
+        Turmas tela = new Turmas();
+        tela.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_TurmaBtnActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Back;
+    private javax.swing.JMenuItem AgendaBtn;
+    private javax.swing.JMenuItem BoletimBtn;
+    private javax.swing.JMenuItem TurmaBtn;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
