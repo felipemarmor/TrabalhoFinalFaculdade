@@ -32,6 +32,9 @@ public class Login extends javax.swing.JFrame {
         Login = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        AlunoBotao = new javax.swing.JCheckBox();
+        ProfessorBotao = new javax.swing.JCheckBox();
+        AdministradorBotao = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,6 +49,27 @@ public class Login extends javax.swing.JFrame {
 
         jLabel2.setText("Senha");
 
+        AlunoBotao.setText("Aluno");
+        AlunoBotao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlunoBotaoActionPerformed(evt);
+            }
+        });
+
+        ProfessorBotao.setText("Professor");
+        ProfessorBotao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProfessorBotaoActionPerformed(evt);
+            }
+        });
+
+        AdministradorBotao.setText("Administrador");
+        AdministradorBotao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdministradorBotaoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -55,16 +79,24 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Senha)
-                            .addComponent(LoginText, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2))
+                                .addGap(27, 27, 27)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Senha)
+                                    .addComponent(LoginText, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(AlunoBotao)
+                                .addGap(29, 29, 29)
+                                .addComponent(ProfessorBotao)
+                                .addGap(18, 18, 18)
+                                .addComponent(AdministradorBotao))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(171, 171, 171)
                         .addComponent(Login)))
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,7 +109,12 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addGap(56, 56, 56)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AlunoBotao)
+                    .addComponent(ProfessorBotao)
+                    .addComponent(AdministradorBotao))
+                .addGap(15, 15, 15)
                 .addComponent(Login)
                 .addGap(49, 49, 49))
         );
@@ -86,10 +123,35 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
+        if(ProfessorBotao.isSelected()){
         Agenda tela = new Agenda();
         tela.setVisible(true);
         this.dispose();
+        }
+        else if(AlunoBotao.isSelected()){
+        
+        }
+
     }//GEN-LAST:event_LoginActionPerformed
+
+    private void ProfessorBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfessorBotaoActionPerformed
+        AlunoBotao.setSelected(false);
+        AdministradorBotao.setSelected(false);
+        
+        
+    }//GEN-LAST:event_ProfessorBotaoActionPerformed
+
+    private void AlunoBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlunoBotaoActionPerformed
+        ProfessorBotao.setSelected(false);
+        AdministradorBotao.setSelected(false);
+        
+        
+    }//GEN-LAST:event_AlunoBotaoActionPerformed
+
+    private void AdministradorBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradorBotaoActionPerformed
+        ProfessorBotao.setSelected(false);
+        AlunoBotao.setSelected(false);
+    }//GEN-LAST:event_AdministradorBotaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,8 +189,11 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox AdministradorBotao;
+    private javax.swing.JCheckBox AlunoBotao;
     private javax.swing.JButton Login;
     private javax.swing.JTextField LoginText;
+    private javax.swing.JCheckBox ProfessorBotao;
     private javax.swing.JPasswordField Senha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
